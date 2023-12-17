@@ -1,0 +1,15 @@
+{
+    "weightLabel": "Waga (kg)",
+    "heightLabel": "Wzrost (cm)",
+    "calculateButton": "Oblicz BMI",
+    "resultLabel": "Wynik BMI:",
+    "errorText": "Proszę wprowadzić poprawne dane.",
+    "labels": {
+      "underweight": "Niedowaga",
+      "normalWeight": "Waga prawidłowa",
+      "overweight": "Nadwaga",
+      "obesity1": "I stopień otyłości",
+      "obesity2": "II stopień otyłości (otyłość kliniczna)",
+      "extremeObesity": "Otyłość skrajna"
+    }
+  }
