@@ -6,5 +6,35 @@
     "height": {
         "min": 100,
         "max": 240
+    },
+    "age": {
+        "min": 19,
+        "max": 110
+    },
+    "properBMIAgeRanges" : {
+        "1": [19, 24],
+        "2": [25, 34],
+        "3": [35, 44],
+        "4": [45, 54],
+        "5": [55, 64],
+        "6": [65]
+    },
+    "ageProperBMIValueRanges" : {
+        "1": [19, 24],
+        "2": [20, 25],
+        "3": [21, 26],
+        "4": [22, 27],
+        "5": [23, 28],
+        "6": [24, 29]
+    },
+    "otherBMIRanges": {
+        "starvation":       [0, 15.99],
+        "emaciation":       [16, 16.99],
+        "underweight":      [17, 18.49],
+        "normalWeight":     [19, 29],
+        "overweight":       [25.0, 29.99],
+        "obesity1":         [30, 34.99],
+        "obesity2":         [35, 39.99],
+        "extremeObesity":   [40]
     }
 }

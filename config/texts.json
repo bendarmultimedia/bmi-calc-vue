@@ -1,11 +1,13 @@
 {
     "weightLabel": "Waga (kg)",
     "heightLabel": "Wzrost (cm)",
-    "ageLabel": "wiek",
+    "ageLabel": "Wiek",
     "calculateButton": "Oblicz BMI",
     "resultLabel": "Wynik BMI:",
     "errorText": "Proszę wprowadzić poprawne dane.",
     "labels": {
+      "starvation": "Wygłodzenie",
+      "emaciation": "Wychudzenie",
       "underweight": "Niedowaga",
       "normalWeight": "Waga prawidłowa",
       "overweight": "Nadwaga",

@@ -8,7 +8,7 @@
       <el-slider v-model="height" :min="bmiConfig.height.min" :max="bmiConfig.height.max" show-input @change="calculateBMI" />
   
       <label for="age">{{ texts.ageLabel }}: </label>
-      <el-input v-model="age" />
+      <el-input v-model="age" type="number" :min="bmiConfig.age.min" :max="bmiConfig.age.max" />
   
       <div v-if="result !== null" class="ben-number-result">
       <p>{{ texts.resultLabel }} {{ result }}</p>
@@ -43,7 +43,8 @@ export default {
     onMounted(() => {
       weight.value = rangeMixin.methods.middleRange(bmiConfig.weight.min, bmiConfig.weight.max);
       height.value = rangeMixin.methods.middleRange(bmiConfig.height.min, bmiConfig.height.max);
-      age.value = rangeMixin.methods.middleRange(0, 100); // Set a default middle value for age
+      age.value = 25;
+    //   age.value = rangeMixin.methods.middleRange(bmiConfig.age.min, bmiConfig.age.max) - 20;
     });
 
     const handleInputChange = (newWeight, newHeight) => {
