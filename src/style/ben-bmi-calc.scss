@@ -1,0 +1,34 @@
+// Custom Colors
+$primary-color: #3498db;
+$warning-color: #f39c12;
+$danger-color: #e74c3c;
+$success-color: #2ecc71;
+
+// .ben-text-result styles based on BMI ranges
+.ben-text-result {
+  margin-top: 10px;
+
+  &.underweight {
+    color: $warning-color;
+  }
+
+  &.normal-weight {
+    color: $success-color;
+  }
+
+  &.overweight {
+    color: $primary-color;
+  }
+
+  &.obesity1 {
+    color: $warning-color;
+  }
+
+  &.obesity2 {
+    color: $danger-color;
+  }
+
+  &.extreme-obesity {
+    color: $danger-color;
+  }
+}

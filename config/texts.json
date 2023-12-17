@@ -1,6 +1,7 @@
 {
     "weightLabel": "Waga (kg)",
     "heightLabel": "Wzrost (cm)",
+    "ageLabel": "wiek",
     "calculateButton": "Oblicz BMI",
     "resultLabel": "Wynik BMI:",
     "errorText": "Proszę wprowadzić poprawne dane.",
