@@ -4,31 +4,40 @@ $warning-color: #f39c12;
 $danger-color: #e74c3c;
 $success-color: #2ecc71;
 
-// .ben-text-result styles based on BMI ranges
-.ben-text-result {
-  margin-top: 10px;
+.ben-bmi-calculator {
+    background-color: #d7b4f6;
+    background-image: url('/public/img/kalkulator-bmi.png');
+    background-position: bottom right;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 1.4em;
+    width: 100%;
 
-  &.underweight {
-    color: $warning-color;
-  }
+    .ben-text-result {
+      margin-top: 10px;
 
-  &.normal-weight {
-    color: $success-color;
-  }
+      &.underweight {
+        color: $warning-color;
+      }
 
-  &.overweight {
-    color: $primary-color;
-  }
+      &.normal-weight {
+        color: $success-color;
+      }
 
-  &.obesity1 {
-    color: $warning-color;
-  }
+      &.overweight {
+        color: $primary-color;
+      }
 
-  &.obesity2 {
-    color: $danger-color;
-  }
+      &.obesity1 {
+        color: $warning-color;
+      }
 
-  &.extreme-obesity {
-    color: $danger-color;
-  }
+      &.obesity2 {
+        color: $danger-color;
+      }
+
+      &.extreme-obesity {
+        color: $danger-color;
+      }
+    }
 }

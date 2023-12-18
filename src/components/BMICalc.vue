@@ -1,6 +1,6 @@
 <!-- BMICalculator.vue -->
 <template>
-    <div>
+    <div class="ben-bmi-calculator">
       <label for="weight">{{ texts.weightLabel }} ({{ weight }} kg): </label>
       <el-slider v-model="weight" :min="bmiConfig.weight.min" :max="bmiConfig.weight.max" show-input @change="calculateBMI" />
   
