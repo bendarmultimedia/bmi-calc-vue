@@ -1,11 +1,12 @@
 {
-    "weightLabel": "Waga (kg)",
-    "heightLabel": "Wzrost (cm)",
+    "weightLabel": "Waga",
+    "heightLabel": "Wzrost",
     "ageLabel": "Wiek",
     "calculateButton": "Oblicz BMI",
-    "resultLabel": "Wynik BMI:",
+    "resultLabel": "Wynik:",
     "errorText": "Proszę wprowadzić poprawne dane.",
     "labels": {
+      "yourBMI": "Twoje BMI wskazuje na:",
       "starvation": "Wygłodzenie",
       "emaciation": "Wychudzenie",
       "underweight": "Niedowaga",
@@ -14,5 +15,16 @@
       "obesity1": "I stopień otyłości",
       "obesity2": "II stopień otyłości (otyłość kliniczna)",
       "extremeObesity": "Otyłość skrajna"
-    }
+    },
+    "tip": {
+        "starvation": "Zadbaj o swoje zdrowie. Skonsultuj się z lekarzem.",
+        "emaciation": "Zadbaj o swoje zdrowie. Skonsultuj się z lekarzem.",
+        "underweight": "Zadbaj o swoje zdrowie. Skonsultuj się z lekarzem.",
+        "normalWeight": "Tak trzymaj. Utrzymuj dalej prawidłową wagę ciała.",
+        "overweight": "Zadbaj o swoje zdrowie. Zmień nawyki i skontaktuj się z lekarzem.",
+        "obesity1": "Zadbaj o swoje zdrowie. Zmień nawyki i skontaktuj się z lekarzem.",
+        "obesity2": "Zadbaj o swoje zdrowie. Zmień nawyki i skontaktuj się z lekarzem.",
+        "extremeObesity": "Zadbaj o swoje zdrowie. Skonsultuj się z lekarzem."
+    },
+    "properBMIInAge": "Prawidłowy stosunek wagi do wzrostu w Twojej grupie wiekowej to:"
   }
