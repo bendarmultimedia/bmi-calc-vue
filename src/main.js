@@ -1,9 +1,8 @@
 import { createApp } from 'vue'
-import './style/style.css'
 import ElementPlus from 'element-plus'
-import './style/ben-bmi-calc.scss'; // Import the SCSS file
 import 'element-plus/dist/index.css'
+import './style/ben-bmi-calc.scss'; // Import the SCSS file
 
-import App from './App.vue'
-const app = createApp(App)
-app.use(ElementPlus).mount('#app')
+import bendarBMIAppComponent from './App.vue'
+const bendarBMIApp = createApp(bendarBMIAppComponent)
+bendarBMIApp.use(ElementPlus, { size: 'small'}).mount('#bendarBMIApp')

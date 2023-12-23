@@ -1,8 +1,9 @@
-<script setup>
-import BMICalc from './components/BMICalc.vue'
-</script>
 
 <template>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <BMICalc />
+    <div>
+        <BMICalc />
+    </div>
 </template>
+<script setup>
+    import BMICalc from './components/BMICalc.vue'
+</script>

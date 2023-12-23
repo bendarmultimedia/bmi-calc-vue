@@ -1,12 +1,66 @@
 // Custom Colors
-$primary-color: #3498db;
+$primary-color: hsl(204, 70%, 53%);
+$not-good-color: #e0bc1c;
 $warning-color: #f39c12;
 $danger-color: #e74c3c;
 $success-color: #2ecc71;
 $dark-color: #3d2053;
 
+#bendarBMIApp {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+
+    button {
+        border-radius: 8px;
+        border: 1px solid transparent;
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        transition: border-color 0.25s;
+    }
+
+    button:hover {
+        border-color: #646cff;
+    }
+
+    button:focus,
+    button:focus-visible {
+        outline: 4px auto -webkit-focus-ring-color;
+    }
+
+    .card {
+        padding: 2em;
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            color: #213547;
+            background-color: #ffffff;
+        }
+
+        a:hover {
+            color: #747bff;
+        }
+
+        button {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
 .ben-bmi-calculator {
-    .el-card__header{
+    .el-card__header {
         background-color: #d7b4f6;
         background-image: url(/public/img/kalkulator-bmi.png);
         background-position: 100% 80%;
@@ -16,76 +70,95 @@ $dark-color: #3d2053;
         justify-content: space-between;
         align-items: center;
         font-weight: bold;
-        text-shadow: 0px 1px 3px rgba(0,0,0,.2);
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, .2);
         color: white;
     }
+
     .el-slider__bar {
         background-color: $dark-color;
     }
+
     .el-slider__button {
         border-color: $dark-color;
     }
+
     .el-input__inner,
     .text-dark {
         color: $dark-color;
     }
+
     .float-left {
-        float:left;
+        float: left;
     }
+
     .el-button {
         background-color: $dark-color;
         border: none;
         color: white;
         margin: 1em .6em;
     }
+
     .age-input {
-        float:right;
+        float: right;
         max-width: 130px;
     }
+
     .age-label {
         text-align: right;
     }
+
     .age-row {
         margin-top: 1.5em;
         margin-bottom: 1.5em;
     }
+
     .ben-text-result,
     .bmi-value {
-      margin-top: 10px;
+        margin-top: 10px;
 
-      &.underweight {
-        color: $warning-color;
-      }
+        &.starvation,
+        &.emaciation,
+        &.underweight {
+            color: $primary-color;
+        }
 
-      &.normal-weight {
-        color: $success-color;
-      }
+        &.normalWeight {
+            color: $success-color;
+        }
 
-      &.overweight {
-        color: $primary-color;
-      }
+        &.overweight {
+            color: $not-good-color;
+        }
 
-      &.obesity1 {
-        color: $warning-color;
-      }
+        &.obesity1 {
+            color: $warning-color;
+        }
 
-      &.obesity2 {
-        color: $danger-color;
-      }
+        &.obesity2 {
+            color: $warning-color;
+        }
 
-      &.extreme-obesity {
-        color: $danger-color;
-      }
+        &.extremeObesity{
+            color: $danger-color;
+        }
     }
 
     .ben-number-result {
         margin-top: 20px;
     }
-    .bmi-value, .bmi-result {
+
+    .bmi-value,
+    .bmi-result {
         font-weight: bold;
         font-size: 1.3em;
     }
+
     .bmi-description {
         text-align: justify;
+    }
+
+    .proper-bmi {
+        font-weight: bold;
+        color: $success-color;
     }
 }

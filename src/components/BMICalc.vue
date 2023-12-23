@@ -49,8 +49,8 @@
       </el-row>
 
       <el-button @click="calculateBMI">{{ texts.calculateButton }}</el-button>
-      <transition name="el-fade-in-linear">
-        <div v-if="result !== null" class="ben-number-result">
+      <transition name="el-fade-in">
+        <div v-if="result != null" class="ben-number-result">
           <p>
             {{ texts.resultLabel }}
             <span :class="['bmi-value', bmiClass]">{{ result }}</span>
@@ -61,6 +61,12 @@
           </p>
           <p>
             <strong>{{ texts.tip[bmiStatus] }}</strong>
+          </p>
+          <p>
+            {{ texts.properBMIInAge }}<br>
+            <span class="proper-bmi">
+                BMI: <span>{{ bmiConfig.ageProperBMIValueRanges[bmiProperRange][0] }}</span> - <span>{{ bmiConfig.ageProperBMIValueRanges[bmiProperRange][1] }}</span>
+            </span>
           </p>
           <div>{{ bmiStatus }}</div>
         </div>
@@ -107,6 +113,7 @@ const age = ref(0);
 const result = ref(null);
 const bmiText = ref("");
 const bmiStatus = ref("");
+const bmiProperRange = ref("");
 const texts = BMI_TEXTS;
 const bmiConfig = BMI_CONFIG;
 
@@ -144,21 +151,9 @@ const calculateBMI = () => {
   const bmi = weightVal / Math.pow(heightVal, 2);
   result.value = bmi.toFixed(2);
 
-//   if (bmi < 16) {
-//     bmiStatus.value = "underweight";
-//   } else if (bmi < 25) {
-//     bmiStatus.value = "normalWeight";
-//   } else if (bmi < 30) {
-//     bmiText.value = "overweight";
-//   } else if (bmi < 35) {
-//     bmiStatus.value = "obesity1";
-//   } else if (bmi < 40) {
-//     bmiStatus.value = "obesity2";
-//   } else {
-//     bmiStatus.value = "extremeObesity";
-//   }
-
   bmiStatus.value = checkRangeValue(bmi, bmiConfig.otherBMIRanges);
+  bmiProperRange.value = checkRangeValue(age.value, bmiConfig.properBMIAgeRanges);
+  console.log(bmiProperRange.value);
   bmiText.value = texts.labels[bmiStatus.value];
 };
 
@@ -182,6 +177,8 @@ const checkRangeValue = (value, ranges) => {
 
 // Use computed property to dynamically calculate the BMI class
 const bmiClass = computed(() => {
+    return bmiStatus.value;
+
   if (result.value < 16) {
     return "underweight";
   } else if (result.value < 25) {
