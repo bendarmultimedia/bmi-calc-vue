@@ -6,7 +6,3 @@ import BMICalc from './components/BMICalc.vue'
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <BMICalc />
 </template>
-
-<style scoped>
-
-</style>
