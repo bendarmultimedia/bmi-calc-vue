@@ -68,45 +68,45 @@
                 BMI: <span>{{ bmiConfig.ageProperBMIValueRanges[bmiProperRange][0] }}</span> - <span>{{ bmiConfig.ageProperBMIValueRanges[bmiProperRange][1] }}</span>
             </span>
           </p>
-          <div>{{ bmiStatus }}</div>
         </div>
-      </transition>
-      <transition name="el-fade-in-linear">
-        <Starvation v-if="bmiStatus == 'starvation'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <Emaciation v-if="bmiStatus == 'emaciation'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <Underweight v-if="bmiStatus == 'underweight'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <NormalWeight v-if="bmiStatus == 'normalWeight'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <Overweight v-if="bmiStatus == 'overweight'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <Obesity1 v-if="bmiStatus == 'obesity1'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <Obesity2 v-if="bmiStatus == 'obesity2'" />
-      </transition>
-      <transition name="el-fade-in-linear">
-        <ExtremeObesity v-if="bmiStatus == 'extremeObesity'" />
-      </transition>
-    </el-card>
-  </div>
+    </transition>
+    <transition name="el-fade-in-linear">
+      <NormalWeight v-if="bmiStatus !== ''" />
+    </transition>
+    
+</el-card>
+</div>
 </template>
 <script setup>
-import Starvation from "/src/components/descriptions/Starvation.vue";
+/* <transition name="el-fade-in-linear">
+  <Starvation v-if="bmiStatus == 'starvation'" />
+</transition>
+<transition name="el-fade-in-linear">
+  <Emaciation v-if="bmiStatus == 'emaciation'" />
+</transition>
+<transition name="el-fade-in-linear">
+  <Underweight v-if="bmiStatus == 'underweight'" />
+</transition>
+<transition name="el-fade-in-linear">
+  <Overweight v-if="bmiStatus == 'overweight'" />
+</transition>
+<transition name="el-fade-in-linear">
+  <Obesity1 v-if="bmiStatus == 'obesity1'" />
+</transition>
+<transition name="el-fade-in-linear">
+  <Obesity2 v-if="bmiStatus == 'obesity2'" />
+</transition>
+<transition name="el-fade-in-linear">
+  <ExtremeObesity v-if="bmiStatus == 'extremeObesity'" />
+</transition> */
+/* import Starvation from "/src/components/descriptions/Starvation.vue";
 import Emaciation from "/src/components/descriptions/Emaciation.vue";
 import Underweight from "/src/components/descriptions/Underweight.vue";
-import NormalWeight from "/src/components/descriptions/NormalWeight.vue";
 import Overweight from "/src/components/descriptions/Overweight.vue";
 import Obesity1 from "/src/components/descriptions/Obesity1.vue";
 import Obesity2 from "/src/components/descriptions/Obesity2.vue";
-import ExtremeObesity from "/src/components/descriptions/ExtremeObesity.vue";
+import ExtremeObesity from "/src/components/descriptions/ExtremeObesity.vue"; */
+import NormalWeight from "/src/components/descriptions/NormalWeight.vue";
 const weight = ref(0);
 const height = ref(0);
 const age = ref(0);
@@ -178,20 +178,6 @@ const checkRangeValue = (value, ranges) => {
 // Use computed property to dynamically calculate the BMI class
 const bmiClass = computed(() => {
     return bmiStatus.value;
-
-  if (result.value < 16) {
-    return "underweight";
-  } else if (result.value < 25) {
-    return "normal-weight";
-  } else if (result.value < 30) {
-    return "overweight";
-  } else if (result.value < 35) {
-    return "obesity1";
-  } else if (result.value < 40) {
-    return "obesity2";
-  } else {
-    return "extreme-obesity";
-  }
 });
 </script>
 <script>
