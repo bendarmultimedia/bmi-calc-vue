@@ -1,7 +1,13 @@
-# Vue 3 + Vite
+# Simple BMI calculator
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+It's simple responsive BMI calculator with age proper value.
 
-## Recommended IDE Setup
+It was made in `Vue.js 3` and compiled by `Vite`
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+There is no right to use image `kalkulator-bmi.png` - you should replace it.
+
+It includes text components in polish for bmi ranges, not used in my case.
+
+
+If you want, you can visit my website [bendar.eu](https://bendar.eu/)
