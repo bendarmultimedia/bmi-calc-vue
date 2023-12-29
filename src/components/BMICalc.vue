@@ -3,11 +3,11 @@
   <div class="ben-bmi-calculator">
     <el-card class="ben-bmi-calculator__card box-card">
       <template #header>
-        <div class="card-header text-dark">
+        <div class="card-header">
           <span>Kalkulator BMI</span>
         </div>
       </template>
-      <el-row :gutter="0">
+      <el-row :gutter="2">
         <el-col :span="24">
           <label for="weight"
             >{{ texts.weightLabel }} ({{ weight }} kg):
@@ -33,19 +33,19 @@
           <!-- @change="calculateBMI" -->
         </el-col>
       </el-row>
-      <el-row :gutter="0" justify="space-between" class="age-row">
-        <el-col :span="16"> </el-col>
-        <el-col :span="5" class="age-label">
-          <label for="age" class="ml-3">{{ texts.ageLabel }}: </label>
-        </el-col>
-        <el-col :span="3">
-          <el-input-number
-            v-model="age"
-            :min="bmiConfig.age.min"
-            :max="bmiConfig.age.max"
-            class="age-input"
-          />
-        </el-col>
+      <el-row :gutter="2" justify="space-between" class="age-row">
+        <el-col :span="24">
+            <div class="age-wrapper">
+
+                <label for="age" class="ml-3">{{ texts.ageLabel }}: </label>
+                <el-input-number
+                v-model="age"
+                :min="bmiConfig.age.min"
+                :max="bmiConfig.age.max"
+                class="age-input"
+                />
+            </div>
+            </el-col>
       </el-row>
 
       <el-button @click="calculateBMI">{{ texts.calculateButton }}</el-button>
@@ -153,6 +153,8 @@ const calculateBMI = () => {
 
   bmiStatus.value = checkRangeValue(bmi, bmiConfig.otherBMIRanges);
   bmiProperRange.value = checkRangeValue(age.value, bmiConfig.properBMIAgeRanges);
+  bmiStatus.value = validateProperBMI(bmi)
+  console.log(bmiStatus.value);
   console.log(bmiProperRange.value);
   bmiText.value = texts.labels[bmiStatus.value];
 };
@@ -174,6 +176,22 @@ const checkRangeValue = (value, ranges) => {
 
   return null; // Return null if the BMI value doesn't fall into any range
 };
+
+const validateProperBMI = (bmi) => {
+    const [min, max] = bmiConfig.ageProperBMIValueRanges[bmiProperRange.value];
+    console.log(bmi);
+    console.log(min);
+    console.log(max);
+    if (["normalWeight"].includes(bmiStatus.value)) {
+        if (bmi < min) {
+            return "underweight"
+        }
+        if (bmi > max) {
+            return "overweight"
+        }
+    }
+    return bmiStatus.value
+}
 
 // Use computed property to dynamically calculate the BMI class
 const bmiClass = computed(() => {
