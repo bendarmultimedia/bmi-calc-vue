@@ -78,34 +78,6 @@
 </div>
 </template>
 <script setup>
-/* <transition name="el-fade-in-linear">
-  <Starvation v-if="bmiStatus == 'starvation'" />
-</transition>
-<transition name="el-fade-in-linear">
-  <Emaciation v-if="bmiStatus == 'emaciation'" />
-</transition>
-<transition name="el-fade-in-linear">
-  <Underweight v-if="bmiStatus == 'underweight'" />
-</transition>
-<transition name="el-fade-in-linear">
-  <Overweight v-if="bmiStatus == 'overweight'" />
-</transition>
-<transition name="el-fade-in-linear">
-  <Obesity1 v-if="bmiStatus == 'obesity1'" />
-</transition>
-<transition name="el-fade-in-linear">
-  <Obesity2 v-if="bmiStatus == 'obesity2'" />
-</transition>
-<transition name="el-fade-in-linear">
-  <ExtremeObesity v-if="bmiStatus == 'extremeObesity'" />
-</transition> */
-/* import Starvation from "/src/components/descriptions/Starvation.vue";
-import Emaciation from "/src/components/descriptions/Emaciation.vue";
-import Underweight from "/src/components/descriptions/Underweight.vue";
-import Overweight from "/src/components/descriptions/Overweight.vue";
-import Obesity1 from "/src/components/descriptions/Obesity1.vue";
-import Obesity2 from "/src/components/descriptions/Obesity2.vue";
-import ExtremeObesity from "/src/components/descriptions/ExtremeObesity.vue"; */
 import NormalWeight from "/src/components/descriptions/NormalWeight.vue";
 const weight = ref(0);
 const height = ref(0);
@@ -128,7 +100,6 @@ onMounted(() => {
     bmiConfig.height.max
   );
   age.value = 25;
-  //   age.value = rangeMixin.methods.middleRange(bmiConfig.age.min, bmiConfig.age.max) - 20;
 });
 
 const handleInputChange = (newWeight, newHeight) => {
@@ -154,8 +125,6 @@ const calculateBMI = () => {
   bmiStatus.value = checkRangeValue(bmi, bmiConfig.otherBMIRanges);
   bmiProperRange.value = checkRangeValue(age.value, bmiConfig.properBMIAgeRanges);
   bmiStatus.value = validateProperBMI(bmi)
-  console.log(bmiStatus.value);
-  console.log(bmiProperRange.value);
   bmiText.value = texts.labels[bmiStatus.value];
 };
 
@@ -174,7 +143,7 @@ const checkRangeValue = (value, ranges) => {
     }
   }
 
-  return null; // Return null if the BMI value doesn't fall into any range
+  return null;
 };
 
 const validateProperBMI = (bmi) => {
@@ -193,7 +162,6 @@ const validateProperBMI = (bmi) => {
     return bmiStatus.value
 }
 
-// Use computed property to dynamically calculate the BMI class
 const bmiClass = computed(() => {
     return bmiStatus.value;
 });

@@ -1,0 +1,10 @@
+{
+  "index.html": {
+    "css": [
+      "css/bendar-bmi-calculator.1.0.1.css"
+    ],
+    "file": "js/bendar-bmi-calculator.1.0.1.js",
+    "isEntry": true,
+    "src": "index.html"
+  }
+}
